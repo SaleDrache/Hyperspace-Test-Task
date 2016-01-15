@@ -67,11 +67,11 @@ body {
 @bookingClr: #5e41a6;
 @footerClr: #493382;
 @transparentClr: rgba(255, 255, 255, 0.6);		/* less transparent white */
-@transparentBorderClr: rgba(255, 255, 255, 0.2);	/* more transparent white */
+@transparentSidebarClr: rgba(255, 255, 255, 0.3);
+@transparentBorderClr: rgba(255, 255, 255, 0.1);	/* more transparent white */
+
 
 /* ------------ MIXIN ---------------*/
-
-
 
 
 /* ------------ FONT SIZING AND COLOR ---------------*/
@@ -116,20 +116,54 @@ p {
 
 
 #sidebar {
-	padding: 100px 0 0 0;
+	padding: 150px 0 0 0;
 	text-align: right;
 	background-color: @sidebarClr;
+	height: 100vh;
+	position: fixed;
+	width: 230px;
+
+	ul {
+		padding: 0 35px;
+	}
 
 	a {
 		font-size: 0.625rem;			/* 10/16px */
+		color: @transparentSidebarClr;
+		padding: 10px 0;
+		margin-bottom: 20px;
+		border-bottom: 2px solid @transparentBorderClr;
+		&:hover, &:active, &:focus {
+			background-color: inherit;
+			border-bottom: 2px solid red;
+			color: white;
+		}
+	}
+}
+
+#main {
+	margin-left: 230px;
+	button {
+		background-color: inherit;
+		padding: 15px 30px;
+		border: 1px solid @transparentBorderClr;
 		color: white;
-		padding: 10px 25px;
+		font-size: 0.625rem;			/* 10/16px */
+		border-radius: 20px;
+
+		&:hover, &:active, &:focus {
+			background-color: @transparentClr;
+			color: @sidebarClr;
+			border: 1px solid @sidebarClr;
+			outline: 0;
+		}
+
 	}
 }
 
 header {
 	background-color: @headerClr;
-	padding: 100px 0 150px 0;
+	padding: 150px 0;
 	h1 {
 		margin-bottom: 30px; 
 	}
@@ -214,6 +248,17 @@ header {
 #booking {
 	padding: 75px 50px;
 	background-color: @bookingClr;
+	p {
+		margin: 20px 0 30px 0;
+	}
+	.infos {
+		p {
+			margin: 10px 0 20px 0;
+		}
+		h5 {
+			margin-bottom: 10px;
+		}
+	}
 }
 
 footer {
