@@ -66,6 +66,8 @@ body {
 @whatWeDoListClr: #bb5797;
 @bookingClr: #5e41a6;
 @footerClr: #493382;
+@transparentClr: rgba(255, 255, 255, 0.6);		/* less transparent white */
+@transparentBorderClr: rgba(255, 255, 255, 0.2);	/* more transparent white */
 
 /* ------------ MIXIN ---------------*/
 
@@ -105,7 +107,7 @@ h2, h3, h4, h5 {
 
 p {
 	line-height:	1.625rem;		/* 26/16px */
-	color: rgba(255, 255, 255, 0.6);
+	color: @transparentClr;
 }
 
 
@@ -160,17 +162,54 @@ header {
 		padding: 0;
 	}
 	.text {
-		padding-left: 60px;
+		padding: 0 60px;
 	}
 }
 
 #whatWeDo {
-	padding: 75px 50px;
+	padding: 75px 60px;
 	background-color: @whatWeDoClr;
-	.whatWeDoList {
-		background-color: @whatWeDoListClr;
+	p {
+		margin: 20px 0;
 	}
+	.whatWeDoList {
+		margin: 0;
+		background-color: @whatWeDoListClr;
+		border: 1px solid @transparentBorderClr;
+		border-radius: 5px;
+		p {
+			margin: 10px 0;
+		}
+		&>div {
+			padding: 30px 30px;
+			&:nth-child(2n) {
+				border-left: 1px solid @transparentBorderClr;
+			}
+			&:nth-child(-n+4) {
+				border-bottom: 1px solid @transparentBorderClr; 
+			}
+		}
+		.circle {	
+			margin-top: -3px;
+			width: 30px;
+			height: 30px;
+			background: white;
+			-moz-border-radius: 15px;
+			-webkit-border-radius: 15px;
+			border-radius: 15px;
+			text-align: center;
+			line-height: 32px;
+			color: @whatWeDoClr;
+		}
+	}
+
+	button {
+		margin-top: 30px;
+	}
+
 }
+
+
 
 #booking {
 	padding: 75px 50px;
