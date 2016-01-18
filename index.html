@@ -26,16 +26,16 @@
 		<script src="js/less.min.js" type="text/javascript"></script>
     </head>
 
-    <body>
+    <body  data-spy="scroll" data-target="#sidebar">
 
     	<div id="content" class="container-fluid">
 
     		<div id="sidebar">
-    			<ul class="nav">
-			        <li><a href="#">WELCOME</a></li>
-			        <li><a href="#">WHO WE ARE</a></li>
-			        <li><a href="#">WHAT WE DO</a></li> 
-			        <li><a href="#">GET IN TOUCH</a></li>
+    			<ul class="nav nav-pills nav-stacked">
+			        <li class="active"><a href="#welcome">WELCOME</a></li>
+			        <li><a href="#whoWeAre">WHO WE ARE</a></li>
+			        <li><a href="#whatWeDo">WHAT WE DO</a></li> 
+			        <li><a href="#booking">BOOKING</a></li>
 	      		</ul>
     		</div>
 
@@ -43,7 +43,7 @@
     		<!-- MAIN PART  -->
     		<div id="main">
 
-    			<header class="row">
+    			<header id="welcome" class="row">
     				<div class="col-md-9">
     					<h1>Hyperspace</h1>
     					<p>Just another fine responsive site template designed by <span class="underlined">HTML5 UP</span><br> and released for free under the <span class="underlined">Creative Commons</span></p>
@@ -212,6 +212,7 @@
 
 
 		<script src="js/jquery-1.11.3.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
 		<script src="js/application.js"></script>
 
 

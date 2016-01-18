@@ -114,6 +114,9 @@ p {
 
 /* ------------ CONTENT ---------------*/
 
+ body {
+      position: relative;
+  }
 
 #content {
 	padding: 0;
@@ -135,6 +138,12 @@ p {
 		padding: 0 45px;
 	}
 
+	.nav-pills>li.active>a {
+			background-color: inherit;
+			border-bottom: 2px solid red;
+			color: white;
+	}
+
 	a {
 		font-size: 0.625rem;			/* 10/16px */
 		letter-spacing: 0.1875rem;
@@ -143,12 +152,13 @@ p {
 		padding: 15px 0;
 		margin-bottom: 30px;
 		border-bottom: 2px solid @transparentBorderClr;
+		border-radius: 0px;
 		&:hover, &:active, &:focus {
 			background-color: inherit;
-			border-bottom: 2px solid red;
-			color: white;
-		}
+			color: @transparentClr;
+		}		
 	}
+
 }
 
 #main {
