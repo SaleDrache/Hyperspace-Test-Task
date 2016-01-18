@@ -98,7 +98,7 @@ h1 {
 }
 
 h2, h3 {
-	font-size: 1.75rem;			/* 28/16px */	
+	font-size: 1.875rem;			/* 30/16px */	
 }
 
 h2, h3, h4, h5 {
@@ -124,7 +124,7 @@ p {
 }
 
 #sidebar {
-	padding: 150px 0 0 0;
+	padding: 180px 0 0 0;
 	text-align: right;
 	background-color: @sidebarClr;
 	height: 100vh;
@@ -132,14 +132,16 @@ p {
 	width: 310px;
 
 	ul {
-		padding: 0 35px;
+		padding: 0 45px;
 	}
 
 	a {
 		font-size: 0.625rem;			/* 10/16px */
+		letter-spacing: 0.1875rem;
+		font-weight: bold;
 		color: @transparentSidebarClr;
-		padding: 10px 0;
-		margin-bottom: 20px;
+		padding: 15px 0;
+		margin-bottom: 30px;
 		border-bottom: 2px solid @transparentBorderClr;
 		&:hover, &:active, &:focus {
 			background-color: inherit;
@@ -153,11 +155,13 @@ p {
 	margin-left: 310px;
 	button {
 		background-color: inherit;
-		padding: 15px 30px;
+		font-weight: bold;
+		letter-spacing: 0.1875rem;
+		padding: 20px 40px;
 		border: 1px solid @transparentBorderClr;
 		color: white;
 		font-size: 0.625rem;			/* 10/16px */
-		border-radius: 20px;
+		border-radius: 30px;
 
 		&:hover, &:active, &:focus {
 			background-color: @transparentClr;
@@ -171,12 +175,13 @@ p {
 
 header {
 	background-color: @headerClr;
-	padding: 150px 0;
+	padding: 180px 60px;
 	h1 {
 		margin-bottom: 30px; 
 	}
 	p {
 		margin-bottom: 40px;
+		font-size: 1.25rem;				/* 20/16px */
 	}
 	button {
 		background-color: @headerClr;
@@ -197,7 +202,7 @@ header {
 		margin-top: 75px;
 	}
 	p {
-		margin: 20px 0;
+		margin: 30px 0;
 	}
 	.row {
 		margin: 0;
@@ -223,7 +228,7 @@ header {
 	padding: 75px 60px;
 	background-color: @whatWeDoClr;
 	p {
-		margin: 20px 0;
+		margin: 30px 0;
 	}
 	.whatWeDoList {
 		margin: 0;
