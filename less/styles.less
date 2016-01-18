@@ -94,11 +94,11 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {	
-	font-size: 2.5rem;				/* 40/16px */
+	font-size: 3rem;			/* 48/16px */
 }
 
 h2, h3 {
-	font-size: 1.625rem;			/* 26/16px */	
+	font-size: 1.75rem;			/* 28/16px */	
 }
 
 h2, h3, h4, h5 {
@@ -115,13 +115,21 @@ p {
 /* ------------ CONTENT ---------------*/
 
 
+#content {
+	padding: 0;
+	.row {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
 #sidebar {
 	padding: 150px 0 0 0;
 	text-align: right;
 	background-color: @sidebarClr;
 	height: 100vh;
 	position: fixed;
-	width: 230px;
+	width: 310px;
 
 	ul {
 		padding: 0 35px;
@@ -142,7 +150,7 @@ p {
 }
 
 #main {
-	margin-left: 230px;
+	margin-left: 310px;
 	button {
 		background-color: inherit;
 		padding: 15px 30px;
@@ -184,6 +192,7 @@ header {
 
 
 #whoWeAre {
+	margin-left: 0px;
 	h2 {
 		margin-top: 75px;
 	}
