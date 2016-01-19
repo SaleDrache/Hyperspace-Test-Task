@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-	function smoothAnimation (e) {
+	function navigationSmoothAnimation (e) {
 		   // prevent default anchor click behavior
 	   e.preventDefault();
 
@@ -20,7 +20,7 @@ $(document).ready(function () {
 
 	
 
-	$(".nav li a[href^='#']").on('click', smoothAnimation );
+	$(".nav li a[href^='#']").on('click', navigationSmoothAnimation );
 				
 	
 });

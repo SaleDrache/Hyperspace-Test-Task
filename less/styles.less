@@ -73,11 +73,27 @@ body {
 
 /* ------------ MIXIN ---------------*/
 
+.sidebarWidth (@widthProperty) {
+	@{widthProperty}: 310px;
+	@media screen and (max-width: @bigscreen) {
+			@{widthProperty}: 250px;
+	}
+	@media screen and (max-width: @laptop) {
+			@{widthProperty}: 200px;
+	}
+	@media screen and (max-width: @tablet) {
+			@{widthProperty}: 120px;
+	}
+	@media screen and (max-width: @tablet) {
+			@{widthProperty}: 60px;
+	}
+}
+
 
 /* ------------ FONT SIZING AND COLOR ---------------*/
 
 html	{	
-	@media screen and (max-width: @laptop) {
+	@media screen and (max-width: @bigscreen) {
 		font-size: 14px;
 	}
 	@media screen and (max-width: @tablet) {
@@ -98,8 +114,13 @@ h1 {
 }
 
 h2, h3 {
-	font-size: 1.875rem;			/* 30/16px */	
+	font-size: 1.875rem;			/* 30/16px */
+	@media screen and (max-width: @laptop) {
+		font-size: 1.5rem;
+	}	
 }
+
+
 
 h2, h3, h4, h5 {
 	line-height:	1.625rem;		/* 26/16px */
@@ -128,14 +149,34 @@ p {
 
 #sidebar {
 	padding: 180px 0 0 0;
+	@media screen and (max-width: @laptop) {
+		padding-top: 50px;		
+	}
+
+	button {
+		margin: 0 8px 10px 0;
+		background-color: gray;
+		float: none;
+		span {
+			background-color: black;
+		}
+	}
 	text-align: right;
 	background-color: @sidebarClr;
 	height: 100vh;
-	position: fixed;
-	width: 310px;
-
+	position: fixed;	
+	.sidebarWidth (width);			/* MIXIN */
+		
 	ul {
 		padding: 0 45px;
+		@media screen and (max-width: @laptop) {
+			padding: 0 20px;
+		}
+		@media screen and (max-width: @tablet) {
+			padding: 0 5px;
+			width: 100px;
+			background-color: @sidebarClr;
+		}
 	}
 
 	.nav-pills>li.active>a {
@@ -157,21 +198,33 @@ p {
 			background-color: inherit;
 			color: @transparentClr;
 		}		
+
+		@media screen and (max-width: @tablet) {
+			margin-bottom: 10px;
+		}
 	}
 
 }
 
 #main {
-	margin-left: 310px;
+	.sidebarWidth (margin-left);		/* MIXIN */
 	button {
 		background-color: inherit;
 		font-weight: bold;
 		letter-spacing: 0.1875rem;
-		padding: 20px 40px;
 		border: 1px solid @transparentBorderClr;
 		color: white;
 		font-size: 0.625rem;			/* 10/16px */
 		border-radius: 30px;
+
+		padding: 20px 40px;
+		@media screen and (max-width: @bigscreen) {
+			padding: 15px 30px;
+		}
+		@media screen and (max-width: @laptop) {
+			padding: 10px 20px;
+		}
+		
 
 		&:hover, &:active, &:focus {
 			background-color: @transparentClr;
@@ -185,7 +238,14 @@ p {
 
 header {
 	background-color: @headerClr;
-	padding: 180px 60px;
+	padding: 180px 20px 180px 60px;
+	@media screen and (max-width: @laptop) {
+		br {
+			display: none;
+		}
+		padding: 50px 30px;		
+	}
+
 	h1 {
 		margin-bottom: 30px; 
 	}
@@ -210,9 +270,25 @@ header {
 	margin-left: 0px;
 	h2 {
 		margin-top: 75px;
+		@media screen and (max-width: @bigscreen) {
+			margin-top: 50px;
+		}
+		@media screen and (max-width: @laptop) {
+			margin-top: 30px;
+		}
+		@media screen and (max-width: @tablet) {
+			margin-top: 15px;
+		}
 	}
 	p {
 		margin: 30px 0;
+		@media screen and (max-width: @bigscreen) {
+			margin: 20px 0;
+		}
+		@media screen and (max-width: @laptop) {
+			margin: 10px 0;
+		}
+		
 	}
 	.row {
 		margin: 0;
@@ -231,19 +307,35 @@ header {
 	}
 	.text {
 		padding: 0 60px;
+		@media screen and (max-width: @laptop) {
+			padding: 0 30px;
+		}
+		@media screen and (max-width: @tablet) {
+			padding: 30px 45px;
+		}
 	}
 }
 
 #whatWeDo {
 	padding: 75px 60px;
+	@media screen and (max-width: @tablet) {
+		padding: 30px 45px;
+		h3 {
+			margin-top: 15px;
+		}
+	}
+
 	background-color: @whatWeDoClr;
 	p {
 		margin: 30px 0;
+		@media screen and (max-width: @tablet) {
+			margin: 15px 0 20px 0;
+		}
 	}
 	.whatWeDoList {
 		margin: 0;
 		background-color: @whatWeDoListClr;
-		border: 1px solid @transparentBorderClr;
+		border: 1px solid @transparentBorderClr;					/* giving border around list */
 		border-radius: 5px;
 		p {
 			margin: 10px 0;
@@ -251,11 +343,26 @@ header {
 		&>div {
 			padding: 30px 30px;
 			&:nth-child(2n) {
-				border-left: 1px solid @transparentBorderClr;
+				border-left: 1px solid @transparentBorderClr;		/* giving border between 2 collums */
 			}
+
 			&:nth-child(-n+4) {
-				border-bottom: 1px solid @transparentBorderClr; 
+				border-bottom: 1px solid @transparentBorderClr; 	/* giving border between rows */
 			}
+			
+			@media screen and (max-width: @laptop) {
+				&:nth-child(2n) {									/* deleting border between 2 collums for smaller screens  */
+					border-left: none;
+				}
+				&:nth-child(-n+5) {									/* adding one more border between rows for smaller screens  */
+					border-bottom: 1px solid @transparentBorderClr; 
+				}
+			}
+
+			@media screen and (max-width: @mobile) {
+				padding: 20px 0;
+			}
+
 		}
 		.circle {	
 			margin-top: -3px;
@@ -268,6 +375,9 @@ header {
 			text-align: center;
 			line-height: 32px;
 			color: @whatWeDoClr;
+			@media screen and (max-width: @tablet) {
+				margin: 0 auto 20px auto;
+			}
 		}
 	}
 
@@ -281,6 +391,10 @@ header {
 
 #booking {
 	padding: 75px 50px 35px 50px;
+	@media screen and (max-width: @tablet) {
+		padding: 45px 45px 10px 45px;
+	}
+
 	background-color: @bookingClr;
 	p {
 		margin: 20px 0 30px 0;
@@ -302,6 +416,14 @@ header {
 				color: white;
 			}
 		}
+
+		@media screen and (max-width: @tablet) {
+			border-left: none;
+			border-top: 1px solid @transparentBorderClr;
+			margin-top: 30px;
+			padding-top: 20px;
+		}
+
 		.underlined {
 			border-bottom: 1px dotted  @transparentClr;
 			margin-bottom: 20px;
@@ -316,4 +438,17 @@ header {
 footer {
 	padding: 75px 50px;
 	background-color: @footerClr;
+
+	@media screen and (max-width: @laptop) {
+		padding: 35px 45px;
+	}
+
+	@media screen and (max-width: @tablet) {
+		padding: 20px 45px;
+	}
+
+	p {
+		display: inline;
+		margin-right: 30px;
+	}
 }
