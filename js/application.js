@@ -27,12 +27,15 @@ $(document).ready(function () {
 		$("#myModal").modal();
 	}
 
+	function bounceAnimation () {
+    	$(this).find('.circle').toggleClass("hovered");
+	}
 
 
-	
 
 	$(".nav li a[href^='#']").on("click", navigationSmoothAnimation );
 	$(".learnMore").on("click", showLearnMoreModal );
+	$(".whatWeDoList>div").hover( bounceAnimation );
 				
 	
 });
