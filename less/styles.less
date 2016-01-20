@@ -155,10 +155,10 @@ p {
 
 	button {
 		margin: 0 8px 10px 0;
-		background-color: gray;
+		background-color: @headerClr;
 		float: none;
 		span {
-			background-color: black;
+			background-color: white;
 		}
 	}
 	text-align: right;
@@ -227,7 +227,7 @@ p {
 		
 
 		&:hover, &:active, &:focus {
-			background-color: @transparentClr;
+			background-color: @transparentSidebarClr;
 			color: @sidebarClr;
 			border: 1px solid @sidebarClr;
 			outline: 0;
@@ -405,11 +405,52 @@ p {
 
 	background-color: @bookingClr;
 	p {
-		margin: 20px 0 30px 0;
+		margin: 20px 0 40px 0;
 	}
+
+	label {
+		margin-bottom: 10px;
+		font-weight: bold;
+		color: white; 
+	}
+
+	.bookingForm {
+		@media screen and (max-width: @mobile) {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+
+	.form-group {
+		margin-bottom: 30px;
+		@media screen and (max-width: @laptop) {
+			margin-bottom: 20px;
+		}
+		@media screen and (max-width: @tablet) {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+
+	.events {
+		@media screen and (max-width: @tablet) {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+
+	#listOfPeople, #selectEvent {
+		height: 100px;
+		overflow: auto;
+	}
+
+	button {
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
 	.infos {
-		padding-left: 30px;
-		padding-bottom: 40px;
+		padding: 0 0 40px 30px;
 		border-left: 1px solid @transparentBorderClr;
 		p {
 			margin: 10px 0 20px 0;
@@ -425,11 +466,15 @@ p {
 			}
 		}
 
-		@media screen and (max-width: @tablet) {
+		@media screen and (max-width: @laptop) {
 			border-left: none;
 			border-top: 1px solid @transparentBorderClr;
 			margin-top: 30px;
 			padding-top: 20px;
+		}
+
+		@media screen and (max-width: @mobile) {
+			padding-left: 10px;
 		}
 
 		.underlined {

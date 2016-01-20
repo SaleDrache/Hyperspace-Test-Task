@@ -173,15 +173,44 @@
     			<div id="booking" class="row">
     				<h3>Book the ticket</h3>
     				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    				<div class="bookingForm col-sm-7">
-                        <form>
-                            <label>Full Name</label>
-                            <input type="text">
-                            <label>Email</label>
-                            <input type="text">
-                        </form>
+    				<div class="bookingForm col-sm-12 col-md-8">
+                        <div class="col-md-6 form-group">
+                            <label for="usr">Full Name:</label>
+                            <input type="text" class="form-control" id="usr" placeholder="Enter your name">
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label for="email">Email Adress:</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                        </div>
+
+                        <div class="events col-md-4">
+                            <fieldset class="form-group">
+                                <label for="selectEvent">Select the Event:</label>
+                                <select multiple class="form-control" id="selectEvent">
+                                  <option>Event 1</option>
+                                  <option>Event 2</option>
+                                  <option>Event 3</option>
+                                  <option>Event 4</option>
+                                  <option>Event 5</option>
+                                  <option>Event 6</option>
+                                  <option>Event 7</option>
+                                </select>
+                          </fieldset>
+                        </div>
+
+                        <div class="alreadyGoing col-md-8 form-group">
+                            <label for="listOfPeople">Already going:</label>
+                            <ul class="form-control" id="listOfPeople">
+                                <li>Petar Urosevic</li>
+                                <li>Aleksandar Kostadinovic</li>
+                                <li>Ivana Pavlovic</li>
+                            </ul>
+                        </div>
+
+                        <button type="button">BOOK NOW</button>
+
     				</div>
-    				<div class="infos col-sm-5">
+    				<div class="infos col-sm-12 col-md-4">
     					<h5>Address</h5>
     					<p>12345 Somewhere Road #654 <br> Nashville, TN 00000-0000 <br> USA </p>
     					<h5>Email</h5>
