@@ -18,9 +18,21 @@ $(document).ready(function () {
 	     });
 	}
 
+	function showLearnMoreModal () {
+		var title = $(this).parent().find(".title").text();
+		var bodyText = $(this).parent().find(".modalText").html();
+
+		$(".modal-title").text(title);
+		$(".modal-body").html(bodyText);
+		$("#myModal").modal();
+	}
+
+
+
 	
 
-	$(".nav li a[href^='#']").on('click', navigationSmoothAnimation );
+	$(".nav li a[href^='#']").on("click", navigationSmoothAnimation );
+	$(".learnMore").on("click", showLearnMoreModal );
 				
 	
 });

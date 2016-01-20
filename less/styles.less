@@ -70,6 +70,8 @@ body {
 @transparentSidebarClr: rgba(255, 255, 255, 0.3);
 @transparentBorderClr: rgba(255, 255, 255, 0.1);	/* more transparent white */
 
+@modalClr: #5e42a6;
+
 
 /* ------------ MIXIN ---------------*/
 
@@ -135,9 +137,14 @@ p {
 
 /* ------------ CONTENT ---------------*/
 
- body {
-      position: relative;
-  }
+body {
+    position: relative;
+}
+
+.modalText {
+	display: none;
+}
+
 
 #content {
 	padding: 0;
@@ -503,5 +510,22 @@ footer {
 	p {
 		display: inline;
 		margin-right: 30px;
+	}
+}
+
+#myModal {
+
+	h4 {
+		font-size: 2rem;
+		color: @transparentClr;
+	}
+
+	p {
+		margin-bottom: 20px;
+		color: @transparentClr;
+	}
+
+	.modal-content {
+		background-color: @modalClr;	
 	}
 }
