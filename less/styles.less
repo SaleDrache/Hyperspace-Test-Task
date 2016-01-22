@@ -379,19 +379,39 @@ body {
 			@media screen and (max-width: @mobile) {
 				padding: 20px 0;
 			}
-
 		}
+		
+		.circleIcon {
+			padding-left: 3%;
+			@media screen and (max-width: @bigscreen) {
+				padding-left: 15px;
+			}
+		}
+
 		.circle {	
-			margin-top: -3px;
-			width: 30px;
-			height: 30px;
-			background: white;
-			-moz-border-radius: 15px;
-			-webkit-border-radius: 15px;
-			border-radius: 15px;
-			text-align: center;
-			line-height: 32px;
 			color: @whatWeDoClr;
+			text-align: center;
+			background: white;
+
+			margin-top: -3px;
+			width: 40px;
+			height: 40px;			
+			-moz-border-radius: 20px;
+			-webkit-border-radius: 20px;
+			border-radius: 20px;			
+			line-height: 42px;
+			
+			@media screen and (max-width: @bigscreen) {
+				margin-top: -3px;
+				width: 30px;
+				height: 30px;			
+				-moz-border-radius: 15px;
+				-webkit-border-radius: 15px;
+				border-radius: 15px;			
+				line-height: 32px;
+			}
+
+
 			@media screen and (max-width: @tablet) {
 				margin: 0 auto 20px auto;
 			}
